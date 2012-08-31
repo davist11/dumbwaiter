@@ -1,0 +1,150 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Dumbwaiter Options</title>
+	<meta charset="utf-8">
+	<style>
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		
+		body {
+			box-sizing: border-box;
+			color: #222;
+			font: 14px/1.5 Helvetica, Arial, sans-serif;
+		}
+		
+		.container {
+			margin: 40px auto;
+			width: 960px;
+		}
+		
+		.forms {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.forms li {
+			border-bottom: 1px solid #dedede;
+			margin-bottom: 20px;
+			padding-bottom: 20px;
+		}
+		
+		.forms .buttons {
+			border-bottom: none;
+		}
+		
+		.forms li:after {
+			clear: both;
+			content: ".";
+			display: block;
+			height: 0;
+			visibility: hidden;
+		}
+		
+		.forms label {
+			cursor: pointer;
+			display: block;
+			font-size: 16px;
+			font-weight: bold;
+			padding-bottom: 5px;
+		}
+		
+		.forms input,
+		.forms textarea {
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.15);
+			color: #222;
+			float: left;
+			font: inherit;
+			font-size: 12px;
+			padding: 10px;
+			-webkit-transition: all 0.25s ease-in-out;
+			transition: all 0.25s ease-in-out;
+			width: 600px;
+		}
+		
+		.forms input:focus,
+		.forms textarea:focus {
+			box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.15), 0 0 10px rgba(0, 110, 165, 0.75);
+			outline: none;
+		}
+		
+		.forms textarea {
+			height: 250px;
+		}
+		
+		.forms .help {
+			color: #999;
+			float: right;
+			font-size: 13px;
+			width: 300px;
+		}
+		
+		.forms .help p {
+			margin: 0 0 1.5em;
+			padding: 0;
+		}
+		
+		.forms button {
+			background: #006ea5;
+			border: none;
+			border-radius: 5px;
+			color: #fff;
+			cursor: pointer;
+			font: inherit;
+			padding: 5px 10px;
+		}
+		
+		#message {
+			background: rgba(25, 173, 95, 0.5);
+			border: 1px solid rgba(25, 173, 95, 0.75);
+			margin-bottom: 20px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Dumbwaiter</h1>
+		<form>
+			<ol class="forms">
+				<li>
+					<label for="url">URL</label>
+					<input type="text" name="url" id="url">
+					<div class="help">
+						The URL that you want to open in the popup.
+					</div>
+				</li>
+		
+				<li>
+					<label for="retrieve">Retrieve Data Code</label>
+					<textarea name="retrieve" id="retrieve"></textarea>
+					<div class="help">
+						<p>This is the JS code to execute on the current page you are on. You need to make sure to set an object named <strong>data</strong> with the data you want to access on the popup.</p>
+						<p>Note: you can use jQuery.</p>
+					</div>
+				</li>
+				<li>
+					<label for="insert">Insert Data Code</label>
+					<textarea name="insert" id="insert"></textarea>
+					<div class="help">
+						<p>This is the JS code to execute on the popup. You will have access to everything in the data object that you set in the previous textbox.</p>
+						<p>Note: you can use jQuery.</p>
+					</div>
+				</li>
+				<li class="buttons">
+					<button type="submit">Save</button>
+				</li>
+			</ol>
+		</form>
+	</div>
+
+	<script src="jquery.js"></script>
+	<script src="options.js"></script>
+</body>
+</html>

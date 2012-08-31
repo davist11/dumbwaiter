@@ -1,8 +1,8 @@
 {
-	"name": "Add Recipe",
-	"version": "1.1",
+	"name": "Dumbwaiter",
+	"version": "1",
 	"manifest_version": 2,
-	"description": "The first extension that I made.",
+	"description": "Take data from one page and move it to another.",
 	"background": {
 		"scripts": ["background.js"]
 	},
@@ -11,5 +11,13 @@
 	},
 	"permissions": [
 		"tabs", "http://*/", "https://*/"
-	]
+	],
+	"web_accessible_resources": ["jquery.js"],
+	"content_scripts": [
+		{
+	      "matches": ["http://*/*","https://*/*"],
+	      "js": ["jquery.js"]
+		}
+	],
+	"options_page": "options.html"
 }
